@@ -11,13 +11,13 @@ export default function ModalPortal({ children }: Props) {
         return null;
     }
 
-    useEffect(() => {
-        const originalStyle = window.getComputedStyle(document.body).overflow;
-        document.body.style.overflow = 'hidden';
-        return () => {
-            document.body.style.overflow = originalStyle;
-        };
-    }, []);
+    // useEffect(() => {
+    //     const originalStyle = window.getComputedStyle(document.body).overflow;
+    //     document.body.style.overflow = 'hidden';
+    //     return () => {
+    //         document.body.style.overflow = originalStyle;
+    //     };
+    // }, []);
 
     const node = document.getElementById('portal') as Element;
     return ReactDom.createPortal(children, node);
