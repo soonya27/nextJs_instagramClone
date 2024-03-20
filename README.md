@@ -1,8 +1,6 @@
+# Instagram Clone with Next.js (인스타그램 클론 코딩)
 
 ### [page link](https://next-js-instagram-clone.vercel.app/)
-
-
-# Instagram Clone with Next.js (인스타그램 클론 코딩)
 
 📸🌟This project is a web application that mimics the basic functionalities of Instagram. It is built using Next.js for the frontend, Sanity.io for the backend and database, and utilizes Next.js API routes for custom backend functionalities.
 The project allows users to upload images, like posts, leave comments, follow and unfollow other users, and view user profile pages.
