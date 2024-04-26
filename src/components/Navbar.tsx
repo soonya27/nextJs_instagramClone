@@ -54,7 +54,6 @@ export default function Navbar() {
 
                     <li>
                         <Link href=''>
-
                             {
                                 session ? <ColorButton text='Sign out' onClick={() => signOut()} />
                                     : <ColorButton text='Sign in' onClick={() => signIn()} />

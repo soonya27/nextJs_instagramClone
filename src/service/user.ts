@@ -1,7 +1,10 @@
+import { sendEmail } from './mail';
 import { client } from './sanity'
 import { AuthUser, SearchUser } from '@/model/user';
 
 export async function addUser({ id, email, name, username, image }: AuthUser) {
+    const user = await getUserList(name);
+
     const result = client.createIfNotExists({
         _id: id,
         _type: 'user',
@@ -13,7 +16,12 @@ export async function addUser({ id, email, name, username, image }: AuthUser) {
         followers: [],
         bookmarks: [],
     }).then((res) => {
-        console.log('new user was added')
+        // console.log('new user was added');
+
+        //가입? 완료 메일 보내기
+        if (user.length === 0) {
+            sendEmail(email);
+        }
     })
     return result
 }
