@@ -8,9 +8,10 @@ import SearchIcon from './ui/icons/SearchIcon';
 import SearchFillIcon from './ui/icons/SearchFillIcon';
 import NewIcon from './ui/icons/NewIcon';
 import NewFillIcon from './ui/icons/NewFillIcon';
-import ColorButton from './ui/ColorButton';
 import { useSession, signIn, signOut } from "next-auth/react"
 import Avatar from './Avatar';
+import LogoutIcon from './ui/icons/LogoutIcon';
+import UserIcon from './ui/icons/UserIcon';
 
 
 
@@ -46,20 +47,24 @@ export default function Navbar() {
                             </li>
                         ))
                     }
-                    {user && (
+                    {user ? (
                         <li><Link href={`/user/${user.username}`}>
                             <Avatar image={user.image} size='small' highlight />
                         </Link></li>
-                    )}
-
-                    <li>
-                        <Link href=''>
-                            {
-                                session ? <ColorButton text='Sign out' onClick={() => signOut()} />
-                                    : <ColorButton text='Sign in' onClick={() => signIn()} />
-                            }
+                    ) : (
+                        <Link href='' onClick={() => signIn()} >
+                            <UserIcon />
                         </Link>
-                    </li>
+                    )}
+                    {
+                        session && (<li>
+                            <Link href='' onClick={() => signOut()} >
+                                <LogoutIcon />
+                            </Link>
+                        </li>)
+                    }
+
+
                 </ul>
             </nav>
         </header>
