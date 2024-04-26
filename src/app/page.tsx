@@ -16,7 +16,7 @@ export default async function HomePage() {
     redirect('/api/auth/signin');
   }
   return (
-    <section className='flex min-h-screen flex-col md:flex-row gap-4'>
+    <section className='flex min-h-screen flex-col md:flex-row gap-4 pb-[4rem]'>
       <div className='w-full basis-3/4 min-w-0 bg-slate-50'>
         <FollowingBar />
         <PostList />

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from '@/components/Navbar';
 import AuthContext from '@/context/AuthContext';
 import SWRConfigContext from '@/context/SWRConfigContext';
+import FooterNavBar from '@/components/FooterNavBar';
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
               {children}
             </SWRConfigContext>
           </main>
+          <FooterNavBar />
         </AuthContext>
         <div id="portal" />
       </body>
