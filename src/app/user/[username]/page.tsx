@@ -4,6 +4,7 @@ import { getUserForProfile } from '@/service/user';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import React, { cache } from 'react';
+import { getFollowingPostByUsername } from '@/service/post';
 
 type Props = {
     params: { username: string }

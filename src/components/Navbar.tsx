@@ -21,7 +21,7 @@ export default function Navbar() {
             </Link>
             <nav>
                 <ul className='flex items-center gap-2'>
-                    <li>
+                    <li className='hidden md:block'>
                         <NavbarMenuList />
                     </li>
 

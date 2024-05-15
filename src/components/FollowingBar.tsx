@@ -16,7 +16,7 @@ export default function FollowingBar() {
     const { user, loading, error, setBookmark } = useMe();
     const followingList = user?.following;
     return (
-        <section className='border p-4 rounded-md mb-2'>
+        <section className='p-4 mb-2'>
             {/* <div className='w-full text-center p-4'><PropagateLoader color="#36d7b7" /></div> */}
             {/* {loading && <div className='w-full text-center p-4'><PropagateLoader color="#36d7b7" /></div>}
             {

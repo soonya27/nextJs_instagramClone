@@ -32,13 +32,15 @@ export default function PostListCard({
         postComment(post, comment);
     }
     return (
-        <article className='rounded-lg shadow-md border border-gray-200'>
+        <article className='rounded-lg shadow-md border border-gray-200 bg-white'>
             <PostUserAvatar username={username} image={userImage} />
-            <Image src={image} alt={`photo by ${username}`} width={600} height={600}
-                className='w-full object-cover aspect-square'
-                priority={priority}
-                onClick={handleClick}
-            />
+            <div className='mx-4'>
+                <Image src={image} alt={`photo by ${username}`} width={600} height={600}
+                    className='w-full object-cover aspect-square rounded-sm'
+                    priority={priority}
+                    onClick={handleClick}
+                />
+            </div>
             <ActionBar post={post} onComment={handlePostComment}>
                 {text && (
                     <p>
